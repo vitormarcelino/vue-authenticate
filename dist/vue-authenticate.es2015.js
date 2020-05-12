@@ -878,6 +878,7 @@ var OAuthPopup = function OAuthPopup(url, name, popupOptions) {
 OAuthPopup.prototype.open = function open (redirectUri, skipPooling) {
   try {
     this.popup = $window.open(this.url, this.name, this._stringifyOptions());
+    this.popup.location = this.url
     if (this.popup && this.popup.focus) {
       this.popup.focus();
     }
